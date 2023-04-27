@@ -4,6 +4,7 @@ import CustomizationSection from "./CustomizationSection";
 import ClientProviders from "./ClientProviders";
 import { fetchProduct } from "@/utils/server/fetch-products";
 import { formatCurrency } from "@/utils/format-currency";
+import GithubIcon from "@/components/icons/GithubIcon";
 
 export default async function Home() {
   const product = await fetchProduct("brg123");
@@ -22,7 +23,15 @@ export default async function Home() {
             </p>
           </div>
           <div className="flex flex-col">
-            <CartPopover />
+            <div className="flex items-center gap-2">
+              <a
+                href="https://github.com/sezze/hesburger-demo"
+                className="text-sm font-semibold text-gray-400 hover:text-gray-500"
+              >
+                <GithubIcon className="fill-current transition" />
+              </a>
+              <CartPopover />
+            </div>
           </div>
         </section>
         <section className="grow flex justify-center items-center lg:justify-self-end">
