@@ -1,12 +1,5 @@
-import Product from "@/types/Product";
+import { fetchProduct } from "@/utils/server/fetch-products";
 
 export async function GET(request: Request) {
-  return new Response(
-    JSON.stringify({
-      id: "brg123",
-      name: "Kerrosateria",
-      image: "/kerroshampurilainen.webp",
-      price: 9.99,
-    } satisfies Product)
-  );
+  return new Response(JSON.stringify(await fetchProduct("brg123")));
 }
